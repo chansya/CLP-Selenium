@@ -17,13 +17,14 @@ public class Runner {
     public static WebDriver driver;
     public static Homepage homepage;
 
-
+    public static SearchResultPage searchResultPage;
     @BeforeClass
     public static void setup() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
 
         homepage = new Homepage(driver);
+        searchResultPage = new SearchResultPage(driver);
     }
 
     @AfterClass
