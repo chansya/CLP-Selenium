@@ -1,9 +1,8 @@
 Feature: Search for products
-  Background:
-    Given user is on the home page
 
     # Positive test
   Scenario: Search for a valid product
+    Given user is on the home page
     When user types a valid product name in the search bar
     And user presses the search icon
     Then A page showing the search result should appear
