@@ -9,4 +9,7 @@ public class CartPage {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+
+    @FindBy(css = "._2Kn22P")
+    public WebElement productInCart;
 }

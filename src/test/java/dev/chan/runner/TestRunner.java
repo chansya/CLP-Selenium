@@ -22,6 +22,7 @@ public class TestRunner {
     public static Homepage homepage;
     public static SearchResultPage searchResultPage;
     public static CartPage cartPage;
+    public static ProductPage productPage;
 
     @BeforeClass
     public static void setup() {
@@ -33,6 +34,7 @@ public class TestRunner {
         homepage = new Homepage(driver);
         searchResultPage = new SearchResultPage(driver);
         cartPage = new CartPage(driver);
+        productPage = new ProductPage(driver);
     }
 
     @AfterClass

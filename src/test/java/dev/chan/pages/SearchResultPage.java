@@ -17,4 +17,7 @@ public class SearchResultPage {
     @FindBy(css="._3uTeW4")
     public WebElement errorMsg;
 
+    @FindBy(css = "div:nth-of-type(2) > ._13oc-S > div > ._2kHMtA > ._1fQZEK")
+    public WebElement firstProduct;
+
 }
