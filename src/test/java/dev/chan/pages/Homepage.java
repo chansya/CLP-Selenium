@@ -21,6 +21,9 @@ public class Homepage {
     @FindBy(xpath = "/html/body/div[2]/div/div/button")
     public WebElement closeBtn;
 
+    @FindBy(xpath = "/html/body/div/div/div[1]/div[1]/div[2]/div[1]/div/a[1]")
+    public WebElement homeIcon;
+
 
 
 }

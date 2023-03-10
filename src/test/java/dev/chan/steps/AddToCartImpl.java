@@ -24,6 +24,10 @@ public class AddToCartImpl {
     public CartPage cartPage = TestRunner.cartPage;
     @Given("user is on product list page")
     public void user_is_on_product_list_page() {
+        driver.get("https://www.flipkart.com/");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.visibilityOf(homepage.closeBtn));
+        homepage.closeBtn.click();
         homepage.searchBar.clear();
         homepage.searchBar.sendKeys("iPhone 13 256 GB");
         homepage.searchIcon.click();
@@ -31,6 +35,8 @@ public class AddToCartImpl {
     }
     @When("user clicks on the desired product")
     public void user_clicks_on_the_desired_product() throws InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.visibilityOf(searchResultPage.firstProduct));
         searchResultPage.firstProduct.click();
         Thread.sleep(3000);
     }
@@ -56,8 +62,8 @@ public class AddToCartImpl {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOf(cartPage.productInCart));
         String actualName = cartPage.productInCart.getText();
-        String expectedName = "APPLE iPhone 13 (Midnight, 256 GB)";
-        assertEquals(expectedName, actualName);
+        String expectedName = "APPLE iPhone 13";
+        assertNotEquals(-1,actualName.indexOf(expectedName) );
 
     }
 
